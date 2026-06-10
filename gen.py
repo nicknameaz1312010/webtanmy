@@ -38,8 +38,7 @@ html = '''<!DOCTYPE html>
         .cert-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.25rem 1rem; text-align: center; transition: all 0.3s ease; }
         .cert-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.06); border-color: #cbd5e1; }
         .process-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #d1d5db; }
-        @media (max-width: 1023px) { .desktop-only { display: none !important; } .mobile-only { display: block !important; } .process-arrow { display: none; } }
-        @media (min-width: 1024px) { .mobile-only { display: none !important; } }
+        @media (max-width: 1023px) { .process-arrow { display: none; } }
     </style>
 </head>
 <body class="bg-white text-gray-900 antialiased overflow-x-hidden tracking-wide">
@@ -63,7 +62,7 @@ html = '''<!DOCTYPE html>
                 </div>
             </a>
 
-            <nav class="desktop-only flex items-center gap-0.5">
+            <nav class="hidden lg:flex items-center gap-0.5">
                 <a href="#" class="px-3 py-2 text-sm font-semibold text-brandBlue border-b-2 border-brandBlue">TRANG CHỦ</a>
                 <a href="#about" class="px-3 py-2 text-sm font-semibold text-gray-600 hover:text-brandBlue transition">GIỚI THIỆU</a>
                 <div class="dropdown relative px-3 py-2 text-sm font-semibold text-gray-600 hover:text-brandBlue transition cursor-pointer">
@@ -94,13 +93,13 @@ html = '''<!DOCTYPE html>
                     <span class="text-gray-300">|</span>
                     <span class="text-gray-400">EN</span>
                 </div>
-                <button id="mobileToggle" class="mobile-only text-2xl text-gray-600" onclick="toggleMobile()"><i class="fas fa-bars"></i></button>
+                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-gray-600"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </div>
 </header>
 
-<div id="mobileMenu" class="mobile-only fixed inset-0 z-40 bg-white pt-24 px-6 py-8 hidden">
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white pt-24 px-6 py-8 hidden lg:hidden">
     <div class="flex flex-col gap-3">
         <a href="#" class="text-lg font-bold text-brandBlue border-b border-gray-100 pb-3">TRANG CHỦ</a>
         <a href="#about" class="text-lg font-semibold text-gray-700 border-b border-gray-100 pb-3">GIỚI THIỆU</a>
@@ -162,7 +161,7 @@ html = '''<!DOCTYPE html>
 
 <!-- METRICS -->
 <section class="relative z-20 max-w-7xl mx-auto px-4 lg:px-8 -mt-20 lg:-mt-24">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 bg-white rounded-2xl shadow-2xl overflow-hidden divide-x divide-gray-100">
+    <div class="grid grid-cols-2 md:grid-cols-5 bg-white rounded-2xl shadow-2xl overflow-hidden divide-x divide-gray-100 gap-4">
         <div class="p-6 lg:p-8 text-center" data-aos="zoom-in" data-aos-delay="0">
             <div class="text-3xl lg:text-4xl font-black text-brandBlue">25+</div>
             <div class="text-xs lg:text-sm text-gray-500 font-bold mt-2 leading-tight">Năm kinh nghiệm</div>
@@ -409,8 +408,8 @@ html = '''<!DOCTYPE html>
 
 <script>
 AOS.init({duration:800,once:true,offset:100});
-function toggleMobile(){const m=document.getElementById('mobileMenu');const i=document.querySelector('#mobileToggle i');m.classList.toggle('hidden');i.className=m.classList.contains('hidden')?'fas fa-bars':'fas fa-times';}
 const navbar=document.getElementById('navbar');window.addEventListener('scroll',function(){navbar.classList.toggle('nav-scrolled',window.scrollY>50);});
+document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('hidden');});
 </script>
 
 </body>
