@@ -33,7 +33,6 @@ html = '''<!DOCTYPE html>
         .project-card:hover img { transform: scale(1.1); }
         .process-arrow { display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #d1d5db; }
         @media (max-width: 1023px) { .process-arrow { display: none; } }
-        .hero-heading { line-height: 3.5 !important; }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800 font-sans antialiased overflow-x-hidden">
@@ -95,20 +94,23 @@ html = '''<!DOCTYPE html>
     <div class="absolute inset-0 hero-mask"></div>
 
     <div class="container mx-auto px-4 z-10 w-full grid lg:grid-cols-12 gap-8 items-stretch py-12">
-        <div class="lg:col-span-8 space-y-6 text-white" data-aos="fade-right">
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black uppercase drop-shadow-md flex flex-col space-y-16 lg:space-y-24 xl:space-y-32">
+        <div class="lg:col-span-8 flex flex-col justify-center text-white max-w-3xl" data-aos="fade-right">
+            <!-- Khối tiêu đề 3 dòng cách đều -->
+            <div class="flex flex-col space-y-4 text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
                 <span>TÂN MỸ</span>
                 <span class="text-yellow-400">KIẾN TẠO GIÁ TRỊ</span>
                 <span>BỀN VỮNG TỪ NHÔM VIỆT</span>
-            </h1>
+            </div>
 
-            <p class="text-base sm:text-lg md:text-xl text-gray-100 max-w-xl font-medium leading-relaxed">
-                Nhà sản xuất nhôm định hình, sản phẩm gia dụng và giải pháp vật liệu xây dựng hàng đầu Việt Nam.
-            </p>
-
-            <div class="flex flex-wrap gap-4 pt-2">
-                <a href="#" class="bg-brandBlue text-white font-bold text-sm sm:text-base tracking-wider px-8 py-4 rounded shadow-lg hover:bg-blue-800 transition transform hover:-translate-y-0.5 uppercase">Khám phá nhà máy</a>
-                <a href="#contact" class="border-2 border-white text-white font-bold text-sm sm:text-base tracking-wider px-8 py-4 rounded hover:bg-white hover:text-brandBlue transition transform hover:-translate-y-0.5 uppercase">Liên hệ tư vấn</a>
+            <!-- Khối mô tả và nút bấm được di chuyển dịch xuống dưới -->
+            <div class="mt-10 space-y-6">
+                <p class="text-xs sm:text-sm md:text-base text-gray-100 max-w-xl font-normal leading-relaxed opacity-95">
+                    Nhà sản xuất nhôm định hình, sản phẩm gia dụng và giải pháp vật liệu xây dựng hàng đầu Việt Nam.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="bg-brandBlue text-white font-extrabold text-[11px] tracking-wider px-7 py-4 rounded shadow-lg uppercase">Khám phá nhà máy</a>
+                    <a href="#contact" class="border-2 border-white text-white font-extrabold text-[11px] tracking-wider px-6 py-3.5 rounded uppercase">Liên hệ tư vấn</a>
+                </div>
             </div>
         </div>
 
