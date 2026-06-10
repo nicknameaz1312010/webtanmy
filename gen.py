@@ -93,9 +93,9 @@ html = '''<!DOCTYPE html>
 <section class="relative min-h-screen flex items-center bg-cover bg-center pt-20" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=85');">
     <div class="absolute inset-0 hero-mask"></div>
 
-    <div class="container mx-auto px-4 z-10 w-full grid lg:grid-cols-12 gap-8 items-center py-12">
-        <div class="lg:col-span-8 space-y-6 md:space-y-8 text-white" data-aos="fade-right">
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-[1.5] drop-shadow-md">
+    <div class="container mx-auto px-4 z-10 w-full grid lg:grid-cols-12 gap-8 items-stretch py-12">
+        <div class="lg:col-span-8 space-y-8 text-white" data-aos="fade-right">
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-[1.5] drop-shadow-md">
                 TÂN MỸ <br>
                 <span class="text-yellow-400">KIẾN TẠO GIÁ TRỊ</span> <br>
                 BỀN VỮNG TỪ NHÔM VIỆT
@@ -111,7 +111,7 @@ html = '''<!DOCTYPE html>
             </div>
         </div>
 
-        <div class="lg:col-span-4 flex justify-start lg:justify-end items-end h-full pt-6 lg:pt-0" data-aos="fade-left">
+        <div class="lg:col-span-4 flex justify-start lg:justify-end items-end h-full pb-6 lg:pb-0" data-aos="fade-left">
             <div class="flex items-center space-x-3 cursor-pointer group bg-black/20 p-3 rounded-full backdrop-blur-sm hover:bg-black/30 transition">
                 <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg transition duration-300 group-hover:scale-105 pulse-ring">
                     <i class="fa-solid fa-play text-sm text-brandBlue ml-0.5"></i>
