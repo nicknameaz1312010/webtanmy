@@ -330,42 +330,53 @@ html = '''<!DOCTYPE html>
 </section>
 
 <!-- KHỐI 9: CHĂM SÓC KHÁCH HÀNG -->
-<section class="bg-white py-14 border-t border-gray-100">
+<section class="bg-[#f8fafc] py-14 border-t border-gray-200">
     <div class="container mx-auto px-4">
         <div class="text-center mb-10">
             <h2 class="text-2xl sm:text-3xl font-black uppercase text-brandBlue">Chăm sóc khách hàng</h2>
             <div class="section-line"></div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div class="text-center p-6 rounded-lg hover:shadow-lg transition bg-gray-50">
-                <div class="w-14 h-14 rounded-full bg-brandBlue flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-phone text-white text-xl"></i>
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center bg-white rounded-xl shadow-sm p-8 lg:p-10">
+                <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <svg viewBox="0 0 550 120" class="h-14 w-auto mb-4" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(5, 5)">
+                            <rect width="110" height="110" fill="white" stroke="#014289" stroke-width="4"/>
+                            <path d="M 4 80 Q 55 105 106 80 L 106 106 L 4 106 Z" fill="#014289"/>
+                            <path d="M 4 106 Q 55 90 106 106 Z" fill="white"/>
+                            <path d="M 55 10 L 25 90 Q 55 75 85 90 Z" fill="#F1C40F"/>
+                            <path d="M 35 35 L 75 35 M 55 35 L 55 75" stroke="#ED1C24" stroke-width="8" stroke-linecap="square"/>
+                            <text x="36" y="75" font-family="sans-serif" font-weight="900" font-size="34" fill="#ED1C24">M</text>
+                        </g>
+                        <text x="135" y="75" font-family="sans-serif" font-weight="900" font-size="82" fill="#014289" letter-spacing="-2">TANMY</text>
+                        <text x="138" y="108" font-family="sans-serif" font-weight="500" font-size="28" fill="#ED1C24">Trường tồn cùng thời gian</text>
+                    </svg>
+                    <p class="text-sm text-gray-500">Công ty TNHH Tân Mỹ - Đối tác tin cậy của mọi nhà.</p>
                 </div>
-                <h3 class="font-bold text-sm uppercase text-brandBlue mb-2">Hotline</h3>
-                <p class="text-lg font-black text-gray-800">024 32252752</p>
-                <p class="text-xs text-gray-500 mt-1">024 3558 5841</p>
-            </div>
-            <div class="text-center p-6 rounded-lg hover:shadow-lg transition bg-gray-50">
-                <div class="w-14 h-14 rounded-full bg-brandBlue flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-envelope text-white text-xl"></i>
+                <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="text-center p-4 rounded-lg bg-gray-50 hover:shadow-md transition">
+                        <div class="w-12 h-12 rounded-full bg-brandBlue flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-phone text-white text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-xs uppercase text-brandBlue mb-1">Hotline</h3>
+                        <p class="text-base font-black text-gray-800">024 32252752</p>
+                        <p class="text-xs text-gray-500">024 3558 5841</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50 hover:shadow-md transition">
+                        <div class="w-12 h-12 rounded-full bg-brandBlue flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-envelope text-white text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-xs uppercase text-brandBlue mb-1">Email</h3>
+                        <p class="text-sm font-medium text-gray-700">vanphongcongty@<br>tanmygroup.com.vn</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50 hover:shadow-md transition">
+                        <div class="w-12 h-12 rounded-full bg-brandBlue flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-location-dot text-white text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-xs uppercase text-brandBlue mb-1">Trụ sở</h3>
+                        <p class="text-sm text-gray-700">Số 77 Lê Văn Hưu,<br>Hai Bà Trưng, Hà Nội</p>
+                    </div>
                 </div>
-                <h3 class="font-bold text-sm uppercase text-brandBlue mb-2">Email</h3>
-                <p class="text-sm font-medium text-gray-700">vanphongcongty@<br>tanmygroup.com.vn</p>
-            </div>
-            <div class="text-center p-6 rounded-lg hover:shadow-lg transition bg-gray-50">
-                <div class="w-14 h-14 rounded-full bg-brandBlue flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-location-dot text-white text-xl"></i>
-                </div>
-                <h3 class="font-bold text-sm uppercase text-brandBlue mb-2">Trụ sở</h3>
-                <p class="text-sm text-gray-700">Số 77 Lê Văn Hưu,<br>Hai Bà Trưng, Hà Nội</p>
-            </div>
-            <div class="text-center p-6 rounded-lg hover:shadow-lg transition bg-gray-50">
-                <div class="w-14 h-14 rounded-full bg-brandBlue flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-clock text-white text-xl"></i>
-                </div>
-                <h3 class="font-bold text-sm uppercase text-brandBlue mb-2">Giờ làm việc</h3>
-                <p class="text-sm text-gray-700">T2 - T7: 8:00 - 17:30</p>
-                <p class="text-xs text-gray-500 mt-1">CN: 8:00 - 12:00</p>
             </div>
         </div>
     </div>
