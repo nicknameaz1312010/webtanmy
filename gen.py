@@ -341,7 +341,7 @@ html = '''<!DOCTYPE html>
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
                 <div class="bg-brandBlue p-5 flex items-center gap-4">
                     <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-md overflow-hidden">
-                        <img src="chat-icon.png" alt="Tân Mỹ" class="w-full h-full object-cover">
+                        <img src="https://tawk.link/5865e574e7588f12124ea003/var/chat_bubble/15fad47ba0fc899390d661b427f7c12f8eb6d458" alt="Tân Mỹ" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <h3 class="text-white font-black text-lg">Chăm sóc khách hàng</h3>
@@ -354,7 +354,7 @@ html = '''<!DOCTYPE html>
                 <div class="p-6 lg:p-8">
                     <div class="flex items-start gap-4 mb-6">
                         <div class="w-10 h-10 rounded-full bg-brandBlue/10 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                            <img src="chat-icon.png" alt="Tân Mỹ" class="w-full h-full object-cover">
+                            <img src="https://tawk.link/5865e574e7588f12124ea003/var/chat_bubble/15fad47ba0fc899390d661b427f7c12f8eb6d458" alt="Tân Mỹ" class="w-full h-full object-cover">
                         </div>
                         <div class="bg-gray-100 rounded-2xl rounded-tl-none px-5 py-3.5 max-w-lg">
                             <p class="text-sm text-gray-700">Xin chào! Tân Mỹ Group rất hân hạnh được phục vụ quý khách. <br class="hidden sm:block">Vui lòng lựa chọn kênh liên hệ dưới đây:</p>
@@ -456,7 +456,7 @@ html = '''<!DOCTYPE html>
         <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 w-64 overflow-hidden">
             <div class="bg-brandBlue p-3.5 flex items-center gap-3">
                 <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
-                    <img src="chat-icon.png" alt="Tân Mỹ" class="w-full h-full object-cover">
+                    <img src="https://tawk.link/5865e574e7588f12124ea003/var/chat_bubble/15fad47ba0fc899390d661b427f7c12f8eb6d458" alt="Tân Mỹ" class="w-full h-full object-cover">
                 </div>
                 <div class="text-white text-sm font-bold">Tân Mỹ hỗ trợ</div>
                 <button id="closeFloat" class="ml-auto text-white/70 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
