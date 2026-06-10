@@ -140,10 +140,10 @@ html = '''<!DOCTYPE html>
         <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between min-h-[75vh]">
             <div class="lg:w-3/5 text-center lg:text-left pt-8 lg:pt-0" data-aos="fade-right">
                 <div class="space-y-8">
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[2] tracking-[0.2em]" style="font-family:'Inter',system-ui,sans-serif">
-                        TÂN MỸ <br>
-                        <span class="text-yellow-400">KIẾN TẠO GIÁ TRỊ</span> <br>
-                        BỀN VỮNG TỪ NHÔM VIỆT
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-[0.2em]" style="font-family:'Inter',system-ui,sans-serif">
+                        <span class="block mb-6 lg:mb-8">TÂN MỸ</span>
+                        <span class="block text-yellow-400 mb-6 lg:mb-8">KIẾN TẠO GIÁ TRỊ</span>
+                        <span class="block">BỀN VỮNG TỪ NHÔM VIỆT</span>
                     </h1>
                     <p class="text-base sm:text-lg lg:text-xl text-gray-200 max-w-xl leading-relaxed font-light">Nhà sản xuất nhôm định hình, sản phẩm gia dụng và giải pháp vật liệu xây dựng hàng đầu Việt Nam.</p>
                     <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
