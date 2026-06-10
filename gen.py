@@ -96,7 +96,7 @@ html = '''<!DOCTYPE html>
 
     <div class="container mx-auto px-4 z-10 w-full grid lg:grid-cols-12 gap-8 items-stretch py-12">
         <div class="lg:col-span-8 space-y-6 text-white" data-aos="fade-right">
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black uppercase drop-shadow-md hero-heading leading-[3.5]">
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black uppercase drop-shadow-md flex flex-col space-y-16 lg:space-y-24 xl:space-y-32">
                 <span>TÂN MỸ</span>
                 <span class="text-yellow-400">KIẾN TẠO GIÁ TRỊ</span>
                 <span>BỀN VỮNG TỪ NHÔM VIỆT</span>
