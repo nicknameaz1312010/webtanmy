@@ -41,22 +41,21 @@ html = '''<!DOCTYPE html>
 <header id="navbar" class="scroll-nav fixed top-0 left-0 w-full z-50 glass-nav">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-            <a href="#" class="flex items-center space-x-1.5">
-                <svg width="170" height="40" viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="2" width="36" height="36" rx="6" fill="#014289"/>
-                    <polygon points="8,10 18,10 13,26" fill="white"/>
-                    <polygon points="14,10 24,10 19,28" fill="#ED1C24" opacity="0.85"/>
-                    <polygon points="20,10 28,10 24,24" fill="white" opacity="0.9"/>
-                    <text x="44" y="28" font-weight="900" font-size="16" fill="#014289" font-family="Inter,system-ui,sans-serif">T</text>
-                    <text x="60" y="28" font-weight="900" font-size="16" fill="#014289" font-family="Inter,system-ui,sans-serif">Â</text>
-                    <text x="76" y="28" font-weight="900" font-size="16" fill="#014289" font-family="Inter,system-ui,sans-serif">N</text>
-                    <text x="106" y="28" font-weight="900" font-size="16" fill="#ED1C24" font-family="Inter,system-ui,sans-serif">M</text>
-                    <text x="122" y="28" font-weight="900" font-size="16" fill="#ED1C24" font-family="Inter,system-ui,sans-serif">Ỹ</text>
-                </svg>
-            </a>
-            <div class="hidden sm:block text-[9px] text-gray-400 font-black tracking-wider pl-3 border-l border-gray-200">
-                THƯƠNG HIỆU<br>UY TÍN
-            </div>
+            <svg viewBox="0 0 550 120" class="h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
+                <!-- 1. KHỐI BIỂU TƯỢNG HÌNH VUÔNG (ICON BÊN TRÁI) -->
+                <g transform="translate(5, 5)">
+                    <rect width="110" height="110" fill="white" stroke="#014289" stroke-width="4"/>
+                    <path d="M 4 80 Q 55 105 106 80 L 106 106 L 4 106 Z" fill="#014289"/>
+                    <path d="M 4 106 Q 55 90 106 106 Z" fill="white"/>
+                    <path d="M 55 10 L 25 90 Q 55 75 85 90 Z" fill="#F1C40F"/>
+                    <path d="M 35 35 L 75 35 M 55 35 L 55 75" stroke="#ED1C24" stroke-width="8" stroke-linecap="square"/>
+                    <text x="36" y="75" font-family="sans-serif" font-weight="900" font-size="34" fill="#ED1C24">M</text>
+                </g>
+                <!-- 2. PHẦN CHỮ THƯƠNG HIỆU "TANMY" -->
+                <text x="135" y="75" font-family="sans-serif" font-weight="900" font-size="82" fill="#014289" letter-spacing="-2">TANMY</text>
+                <!-- 3. PHẦN SLOGAN -->
+                <text x="138" y="108" font-family="sans-serif" font-weight="500" font-size="28" fill="#ED1C24">Trường tồn cùng thời gian</text>
+            </svg>
         </div>
 
         <nav class="hidden lg:flex items-center space-x-6 text-xs font-black uppercase tracking-wider text-slate-700">
@@ -335,16 +334,20 @@ html = '''<!DOCTYPE html>
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14">
             <div class="lg:col-span-1">
-                <svg width="145" height="36" viewBox="0 0 145 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-5">
-                    <rect x="0" y="0" width="32" height="32" rx="5" fill="#014289"/>
-                    <polygon points="7,8 16,8 12,23" fill="white"/>
-                    <polygon points="12,8 21,8 17,25" fill="#ED1C24" opacity="0.85"/>
-                    <polygon points="17,8 25,8 22,21" fill="white" opacity="0.9"/>
-                    <text x="38" y="24" font-weight="900" font-size="13" fill="white" font-family="Inter,system-ui,sans-serif">T</text>
-                    <text x="52" y="24" font-weight="900" font-size="13" fill="white" font-family="Inter,system-ui,sans-serif">Â</text>
-                    <text x="66" y="24" font-weight="900" font-size="13" fill="white" font-family="Inter,system-ui,sans-serif">N</text>
-                    <text x="92" y="24" font-weight="900" font-size="13" fill="#ED1C24" font-family="Inter,system-ui,sans-serif">M</text>
-                    <text x="106" y="24" font-weight="900" font-size="13" fill="#ED1C24" font-family="Inter,system-ui,sans-serif">Ỹ</text>
+                <svg viewBox="0 0 550 120" class="h-14 w-auto mb-5" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 1. KHỐI BIỂU TƯỢNG HÌNH VUÔNG (ICON BÊN TRÁI) -->
+                    <g transform="translate(5, 5)">
+                        <rect width="110" height="110" fill="white" stroke="#014289" stroke-width="4"/>
+                        <path d="M 4 80 Q 55 105 106 80 L 106 106 L 4 106 Z" fill="#014289"/>
+                        <path d="M 4 106 Q 55 90 106 106 Z" fill="white"/>
+                        <path d="M 55 10 L 25 90 Q 55 75 85 90 Z" fill="#F1C40F"/>
+                        <path d="M 35 35 L 75 35 M 55 35 L 55 75" stroke="#ED1C24" stroke-width="8" stroke-linecap="square"/>
+                        <text x="36" y="75" font-family="sans-serif" font-weight="900" font-size="34" fill="#ED1C24">M</text>
+                    </g>
+                    <!-- 2. PHẦN CHỮ THƯƠNG HIỆU "TANMY" -->
+                    <text x="135" y="75" font-family="sans-serif" font-weight="900" font-size="82" fill="#014289" letter-spacing="-2">TANMY</text>
+                    <!-- 3. PHẦN SLOGAN -->
+                    <text x="138" y="108" font-family="sans-serif" font-weight="500" font-size="28" fill="#ED1C24">Trường tồn cùng thời gian</text>
                 </svg>
                 <p class="text-xs leading-relaxed mb-5 text-gray-500">Công ty cổ phần tập đoàn Tân Mỹ - Đối tác tin cậy của mọi nhà.</p>
                 <p class="text-xs mb-2 text-gray-400"><i class="fa-solid fa-map-marker-alt w-4 text-brandBlue mr-1"></i> KCN Thạch Thất, Hà Nội</p>
