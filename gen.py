@@ -481,8 +481,8 @@ html = '''<!DOCTYPE html>
             </div>
         </div>
     </div>
-    <button id="floatToggle" class="float-btn w-14 h-14 rounded-full bg-brandBlue shadow-xl flex items-center justify-center text-white text-2xl hover:shadow-2xl relative">
-        <i id="floatIcon" class="fa-solid fa-headset"></i>
+    <button id="floatToggle" class="float-btn w-14 h-14 rounded-full bg-brandBlue shadow-xl flex items-center justify-center text-white text-2xl hover:shadow-2xl relative overflow-hidden">
+        <img id="floatIcon" src="https://tawk.link/5865e574e7588f12124ea003/var/chat_bubble/15fad47ba0fc899390d661b427f7c12f8eb6d458" alt="Chat" class="w-full h-full object-cover">
         <span class="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></span>
     </button>
 </div>
@@ -494,10 +494,9 @@ window.addEventListener('scroll',function(){navbar.classList.toggle('nav-scrolle
 document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('hidden');});
 const floatToggle=document.getElementById('floatToggle');
 const floatPanel=document.getElementById('floatPanel');
-const floatIcon=document.getElementById('floatIcon');
 const closeFloat=document.getElementById('closeFloat');
-floatToggle.addEventListener('click',function(){floatPanel.classList.toggle('hide');floatPanel.classList.toggle('show');floatIcon.classList.toggle('fa-headset');floatIcon.classList.toggle('fa-xmark');});
-closeFloat.addEventListener('click',function(){floatPanel.classList.add('hide');floatPanel.classList.remove('show');floatIcon.classList.add('fa-headset');floatIcon.classList.remove('fa-xmark');});
+floatToggle.addEventListener('click',function(){floatPanel.classList.toggle('hide');floatPanel.classList.toggle('show');});
+closeFloat.addEventListener('click',function(){floatPanel.classList.add('hide');floatPanel.classList.remove('show');});
 </script>
 
 </body>
