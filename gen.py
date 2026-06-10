@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html = '''<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -414,4 +414,9 @@ const navbar=document.getElementById('navbar');window.addEventListener('scroll',
 </script>
 
 </body>
-</html>
+</html>'''
+
+with open('E:/webtanmy/index.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print(f"Written {len(html)} chars to index.html")
