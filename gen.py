@@ -9,7 +9,6 @@ html = '''<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -20,6 +19,13 @@ html = '''<!DOCTYPE html>
             }
         }
     </script>
+    <script>
+        document.cookie='googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage:'vi',includedLanguages:'vi,en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
         html { scroll-behavior: smooth; }
         .hero-mask { background: linear-gradient(90deg, rgba(1,66,137,0.7) 0%, rgba(15,23,42,0.5) 100%); }
@@ -421,10 +427,6 @@ html = '''<!DOCTYPE html>
 </div>
 
 <script>
-document.cookie='googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage:'vi',includedLanguages:'vi,en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},'google_translate_element');
-}
 function changeLang(lang) {
     var t = setInterval(function(){
         var s = document.querySelector('.goog-te-combo');
