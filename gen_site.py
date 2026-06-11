@@ -56,7 +56,7 @@ NAVBAR_TOP = '''
 {nav_items}
 </nav>
 <div class="flex items-center space-x-4">
-<button class="text-slate-600 hover:text-brandBlue transition"><i class="fa-solid fa-magnifying-glass"></i></button>
+<button id="searchBtn" class="text-slate-600 hover:text-brandBlue transition"><i class="fa-solid fa-magnifying-glass"></i></button>
 <div class="flex items-center space-x-2">
 <a href="{vi_link}" title="Tiếng Việt"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAATlBMVEX+AAD2AADvAQH/eXn+cXL9amr8YmL9Wlr8UlL7TkvoAAD8d0f6Pz/3ODf2Ly/0KSf6R0f6wTv60T31IBz6+jr4+Cv3QybzEhL4bizhAADgATv8AAAAW0lEQVR4AQXBgU3DQBRAMb+7jwKVUPefkQEQTYJqByBENpKUGoZslXoN5LPONH8G9WWZ7pGlOn6XZmaGRce1J/seei4dl+7dPWDqkk7+58e3+igdlySPcYbwBG+lPhCjrtt9EgAAAABJRU5ErkJggg==" alt="VI" width="16" height="11"></a>
 <a href="{en_link}" title="English"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAt1BMVEWSmb66z+18msdig8La3u+tYX9IaLc7W7BagbmcUW+kqMr/q6n+//+hsNv/lIr/jIGMnNLJyOP9/fyQttT/wb3/////aWn+YWF5kNT0oqz0i4ueqtIZNJjhvt/8gn//WVr/6+rN1+o9RKZwgcMPJpX/VFT9UEn+RUX8Ozv2Ly+FGzdYZrfU1e/8LS/lQkG/mbVUX60AE231hHtcdMb0mp3qYFTFwNu3w9prcqSURGNDaaIUMX5FNW5wYt7AAAAAjklEQVR4AR3HNUJEMQCGwf+L8RR36ajR+1+CEuvRdd8kK9MNAiRQNgJmVDAt1yM6kSzYVJUsPNssAk5N7ZFKjVNFAY4co6TAOI+kyQm+LFUEBEKKzuWUNB7rSH/rSnvOulOGk+QlXTBqMIrfYX4tSe2nP3iRa/KNK7uTmWJ5a9+erZ3d+18od4ytiZdvZyuKWy8o3UpTVAAAAABJRU5ErkJggg==" alt="EN" width="16" height="11"></a>
@@ -97,6 +97,16 @@ FOOTER_TOP = '''
 <p>&copy; 2024 Tân Mỹ Group. All rights reserved.</p>
 <div class="flex space-x-4 mt-2 md:mt-0"><a href="#" class="hover:text-white transition">{privacy}</a><a href="#" class="hover:text-white transition">{terms}</a></div>
 </div></div></footer>
+<div id="searchOverlay" class="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm hidden items-center justify-center">
+<div class="w-full max-w-lg mx-4">
+<div class="relative">
+<i class="fa-solid fa-search absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+<input id="searchInput" type="text" class="w-full pl-14 pr-5 py-5 rounded-2xl border-0 shadow-2xl text-lg font-medium outline-none ring-2 ring-brandBlue/30 focus:ring-brandBlue" placeholder="{search_placeholder}" autocomplete="off">
+<button id="searchClose" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div id="searchResults" class="mt-2 hidden"></div>
+</div>
+</div>
 <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end space-y-3">
 <div id="floatPanel" class="float-panel hide bg-white rounded-2xl shadow-2xl p-3 w-56 border border-gray-100">
 <button id="closeFloat" class="float-right text-gray-400 hover:text-gray-700 mb-2"><i class="fa-solid fa-xmark text-lg"></i></button>
@@ -120,6 +130,13 @@ document.getElementById("mobile-menu-btn").addEventListener("click",function(){d
 const ft=document.getElementById("floatToggle"),fp=document.getElementById("floatPanel"),cf=document.getElementById("closeFloat");
 ft.addEventListener("click",function(){fp.classList.toggle("hide");fp.classList.toggle("show");});
 cf.addEventListener("click",function(){fp.classList.add("hide");fp.classList.remove("show");});
+const searchBtn=document.getElementById("searchBtn"),searchOverlay=document.getElementById("searchOverlay"),searchInput=document.getElementById("searchInput"),searchClose=document.getElementById("searchClose");
+function openSearch(){searchOverlay.classList.remove("hidden");searchOverlay.classList.add("flex");setTimeout(()=>searchInput.focus(),100);}
+function closeSearch(){searchOverlay.classList.add("hidden");searchOverlay.classList.remove("flex");searchInput.value="";}
+searchBtn.addEventListener("click",openSearch);
+searchClose.addEventListener("click",closeSearch);
+searchOverlay.addEventListener("click",function(e){if(e.target===searchOverlay)closeSearch();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!searchOverlay.classList.contains("hidden"))closeSearch();});
 const swup=new Swup({containers:["#swup"],plugins:[],animateHistoryBrowsing:true});
 swup.on("contentReplaced",function(){AOS.refresh();window.scrollTo(0,0);});
 </script>
@@ -192,7 +209,8 @@ def make(lang, active_key, body_html, title):
     html = TEMPLATE_HEAD.format(lang=lang, title=title)
     html += NAVBAR_TOP.format(home_link=home_link, logo_path=logo_path, slogan=slogan, nav_items=nav_items, mobile_items=mobile_items, vi_link=vi_link, en_link=en_link)
     html += body_html
-    html += FOOTER_TOP.format(home_link=home_link, logo_path=logo_path, slogan=slogan, intro=intro, address=address, FCOLUMNS=fcols, privacy=privacy, terms=terms, a_phone=a_phone, a_messenger=a_messenger, a_facebook=a_facebook, a_email=a_email)
+    search_placeholder = 'T\u00ecm ki\u1ebfm...' if not is_en else 'Search...'
+    html += FOOTER_TOP.format(home_link=home_link, logo_path=logo_path, slogan=slogan, search_placeholder=search_placeholder, intro=intro, address=address, FCOLUMNS=fcols, privacy=privacy, terms=terms, a_phone=a_phone, a_messenger=a_messenger, a_facebook=a_facebook, a_email=a_email)
     html += HEAD_SCRIPT
     return html
 
