@@ -50,11 +50,8 @@ NAVBAR_TOP = '''
 <nav id="navbar" class="fixed top-0 left-0 w-full z-50 glass-nav" style="transition:all 0.3s ease">
 <div class="container mx-auto px-4 py-3 flex items-center justify-between">
 <a href="{home_link}" class="flex items-center space-x-3">
-<svg viewBox="0 0 550 120" class="h-12 w-auto" xmlns="http://www.w3.org/2000/svg">
-<g transform="translate(5,5)"><rect width="110" height="110" fill="white" stroke="#014289" stroke-width="4"/><path d="M 4 80 Q 55 105 106 80 L 106 106 L 4 106 Z" fill="#014289"/><path d="M 4 106 Q 55 90 106 106 Z" fill="white"/><path d="M 55 10 L 25 90 Q 55 75 85 90 Z" fill="#F1C40F"/><path d="M 35 35 L 75 35 M 55 35 L 55 75" stroke="#ED1C24" stroke-width="8" stroke-linecap="square"/><text x="36" y="75" font-family="sans-serif" font-weight="900" font-size="34" fill="#ED1C24">M</text></g>
-<text x="135" y="75" font-family="sans-serif" font-weight="900" font-size="82" fill="#014289" letter-spacing="-2">TANMY</text>
-<text x="138" y="108" font-family="sans-serif" font-weight="500" font-size="28" fill="#ED1C24">{slogan}</text>
-</svg></a>
+<img src="{logo_path}" alt="Tân Mỹ Group" class="h-12 w-auto">
+</a>
 <nav class="hidden lg:flex items-center space-x-6 text-xs font-black uppercase tracking-wider text-slate-700">
 {nav_items}
 </nav>
@@ -80,11 +77,8 @@ FOOTER_TOP = '''
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
 <div class="lg:col-span-2">
 <a href="{home_link}" class="inline-block mb-4">
-<svg viewBox="0 0 550 120" class="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
-<g transform="translate(5,5)"><rect width="110" height="110" fill="white" stroke="#014289" stroke-width="4"/><path d="M 4 80 Q 55 105 106 80 L 106 106 L 4 106 Z" fill="#014289"/><path d="M 4 106 Q 55 90 106 106 Z" fill="white"/><path d="M 55 10 L 25 90 Q 55 75 85 90 Z" fill="#F1C40F"/><path d="M 35 35 L 75 35 M 55 35 L 55 75" stroke="#ED1C24" stroke-width="8" stroke-linecap="square"/><text x="36" y="75" font-family="sans-serif" font-weight="900" font-size="34" fill="#ED1C24">M</text></g>
-<text x="135" y="75" font-family="sans-serif" font-weight="900" font-size="82" fill="white" letter-spacing="-2">TANMY</text>
-<text x="138" y="108" font-family="sans-serif" font-weight="500" font-size="28" fill="#ED1C24">{slogan}</text>
-</svg></a>
+<img src="{logo_path}" alt="Tân Mỹ Group" class="h-10 w-auto">
+</a>
 <p class="text-sm text-gray-400 mb-4 leading-relaxed">{intro}</p>
 <div class="space-y-2 text-sm">
 <p><i class="fa-solid fa-location-dot text-brandRed w-5"></i> {address}</p>
@@ -151,6 +145,7 @@ def make(lang, active_key, body_html, title):
         mobile_items += f'<a href="{href}" class="block {cls} hover:text-brandBlue py-1.5 border-b border-gray-50">{label}</a>\n'
 
     home_link = 'index.html'  # always just index.html (in en/ subdir for EN, root for VI)
+    logo_path = 'logo.png' if not is_en else '../logo.png'
     slogan = 'Enduring through time' if is_en else 'Tr\u01b0\u1eddng t\u1ed3n c\u00f9ng th\u1eddi gian'
 
     # Look up current page data for lang switcher and VI link
@@ -195,9 +190,9 @@ def make(lang, active_key, body_html, title):
     a_email = al('Email', 'fa-envelope', 'G\u1eedi th\u01b0' if not is_en else 'Send mail')
 
     html = TEMPLATE_HEAD.format(lang=lang, title=title)
-    html += NAVBAR_TOP.format(home_link=home_link, slogan=slogan, nav_items=nav_items, mobile_items=mobile_items, vi_link=vi_link, en_link=en_link)
+    html += NAVBAR_TOP.format(home_link=home_link, logo_path=logo_path, slogan=slogan, nav_items=nav_items, mobile_items=mobile_items, vi_link=vi_link, en_link=en_link)
     html += body_html
-    html += FOOTER_TOP.format(home_link=home_link, slogan=slogan, intro=intro, address=address, FCOLUMNS=fcols, privacy=privacy, terms=terms, a_phone=a_phone, a_messenger=a_messenger, a_facebook=a_facebook, a_email=a_email)
+    html += FOOTER_TOP.format(home_link=home_link, logo_path=logo_path, slogan=slogan, intro=intro, address=address, FCOLUMNS=fcols, privacy=privacy, terms=terms, a_phone=a_phone, a_messenger=a_messenger, a_facebook=a_facebook, a_email=a_email)
     html += HEAD_SCRIPT
     return html
 
