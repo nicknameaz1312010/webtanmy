@@ -138,25 +138,31 @@ def make(lang, active_key, body_html, title):
 
     nav_items = ''
     for pk, vp, ep, lv, le in PAGES:
-        href = ep if is_en else vp
+        href = (ep[3:] if is_en else vp)
         label = le if is_en else lv
         active = 'class="active-nav py-1"' if pk == active_key else 'class="hover:text-brandBlue transition py-1"'
         nav_items += f'<a href="{href}" {active}>{label}</a>\n'
 
     mobile_items = ''
     for pk, vp, ep, lv, le in PAGES:
-        href = ep if is_en else vp
+        href = (ep[3:] if is_en else vp)
         label = le if is_en else lv
         cls = 'text-brandBlue' if pk == active_key else 'text-slate-700'
         mobile_items += f'<a href="{href}" class="block {cls} hover:text-brandBlue py-1.5 border-b border-gray-50">{label}</a>\n'
 
-    home_link = 'en/index.html' if is_en else 'index.html'
+    home_link = 'index.html'  # always just index.html (in en/ subdir for EN, root for VI)
     slogan = 'Enduring through time' if is_en else 'Tr\u01b0\u1eddng t\u1ed3n c\u00f9ng th\u1eddi gian'
 
-    vi_link = vp if not is_en else ('../' + vp) if active_key == 'index' else '../' + vp
-    # Actually, simpler approach:
-    vi_link = ('../' if is_en else '') + vp
-    en_link = ep
+    # Look up current page data for lang switcher and VI link
+    cur_vp = ''
+    cur_ep = ''
+    for pk, vp, ep, lv, le in PAGES:
+        if pk == active_key:
+            cur_vp = vp
+            cur_ep = ep
+            break
+    vi_link = ('../' if is_en else '') + cur_vp
+    en_link = cur_ep if not is_en else cur_ep[3:]  # strip en/ prefix inside en/ subdir
 
     # For index page, the vi_link should be 'index.html'
     if active_key == 'index':
