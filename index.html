@@ -425,9 +425,10 @@ function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage:'vi',includedLanguages:'vi,en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},'google_translate_element');
 }
 function changeLang(lang) {
-    var d = new Date(); d.setTime(d.getTime() + 365*24*60*60*1000);
-    document.cookie = 'googtrans=' + (lang==='en'?'/vi/en':'') + '; path=/; expires=' + d.toUTCString();
-    location.reload();
+    var t = setInterval(function(){
+        var s = document.querySelector('.goog-te-combo');
+        if(s){ s.value=lang; s.dispatchEvent(new Event('change')); clearInterval(t); }
+    }, 200);
 }
 AOS.init({duration:800,once:true,offset:100});
 const navbar=document.getElementById('navbar');
